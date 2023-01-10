@@ -5,7 +5,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-
 import java.util.Objects;
 
 @Entity
@@ -34,8 +33,10 @@ public class User {
     @NotEmpty(message = "Не забудь оставить мыло, для связи!")
     @Email(message = "Напиши валидный адресс!")
     private String email;
+
     public User() {
     }
+
     public User(int id, String name, String surname, int age, String email) {
         this.id = id;
         this.name = name;
@@ -43,6 +44,7 @@ public class User {
         this.age = age;
         this.email = email;
     }
+
     public int getId() {
         return id;
     }

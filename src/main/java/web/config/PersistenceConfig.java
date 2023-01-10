@@ -13,7 +13,6 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 import javax.sql.DataSource;
 import java.util.Objects;
 import java.util.Properties;
@@ -51,7 +50,6 @@ public class PersistenceConfig {
         ds.setUsername(env.getRequiredProperty("db.username"));
         ds.setPassword(env.getRequiredProperty("db.password"));
         ds.setDriverClassName(env.getRequiredProperty("db.driver"));
-
         return ds;
     }
 
@@ -61,7 +59,7 @@ public class PersistenceConfig {
     }
 
     @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
@@ -69,7 +67,6 @@ public class PersistenceConfig {
         Properties properties = new Properties();
         properties.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
         properties.put("hibernate.hbm2ddl.auto", env.getRequiredProperty("hibernate.hbm2ddl.auto"));
-
         return properties;
     }
 }
