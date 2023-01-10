@@ -32,7 +32,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/new")
-    public String getUserPage(@ModelAttribute("user") User user) {
+    public String getCreateUserPage(@ModelAttribute("user") User user) {
         return "new";
     }
 
